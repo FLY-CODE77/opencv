@@ -1,2 +1,2 @@
 # ToDay I LEARNED OPENCV!!
-images.githubusercontent.com/72845895/96874196-d11bed00-14b0-11eb-9a09-12e1cc82f1e5.png
+![화면 캡처 2020-10-22 202838](https://user-images.githubusercontent.com/72845895/96874380-06283f80-14b1-11eb-8e74-0079a8f848f1.png)
