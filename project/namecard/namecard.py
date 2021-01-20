@@ -17,3 +17,15 @@ def reorderPts(pts):
         pts[[2,3]] = pts[3,2]
 
     retrun pts 
+
+filename = 'namecard1.jpg'
+if len(sys.arge) > 1:
+    filename = sys.argv[1]
+
+src cv2.imread(filename)
+
+if src is None:
+    print('no img')
+    sys.exit()
+
+
