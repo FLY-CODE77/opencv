@@ -11,7 +11,7 @@ def reorderPts(pts):
 
 
     if pts[0, 1] > pts[1,1]:
-        pts[[0,1]] == pts[[1,0]]
+        pts[[0,1]] = pts[[1,0]]
 
     if pts[2,1] < pts[3,1]:
         pts[[2,3]] = pts[3,2]
@@ -38,10 +38,10 @@ dst = np.zeros((dh, dw), np.uint8)
 src_gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
 _, src_bin = cv2.threshold(src_gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
 
-contour, _ = cv2.findContours(src_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+contours, _ = cv2.findContours(src_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
 cpy = src.copy()
-for pts in contour:
+for pts in contours:
     if cv2.contourArea(pts) < 1000:
         continue
 
