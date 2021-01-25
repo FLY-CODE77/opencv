@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 # 입력 영상 불러오기
-src = cv2.imread('messi5.jpg')
+src = cv2.imread('cat.bmp')
 
 if src is None:
     print('Image load failed!')
@@ -60,3 +60,5 @@ while True:
         break
 
 cv2.destroyAllWindows()
+
+# 복잡한 영상을 결과와 같이 찾아내지를 못한다
