@@ -9,7 +9,8 @@ if src1 is None or src3 is None:
     print('img load fail')
     sys.exit()
 
-feature = cv2.KAZE_create()
+#feature = cv2.KAZE_create()
+feature = cv2.ORB_create()
 
 kp1 = feature.detect(src1)
 kp3 = feature.detect(src3)
