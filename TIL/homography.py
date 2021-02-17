@@ -25,6 +25,8 @@ matches = sorted(matches, key=lambda x: x.distance)
 good_matches = matches[:80]
 
 # homograpy calc
+
+# pts1 --> kp1[m.queryIdx], pts2 --> kp2[m.trainIdx] 
 pts1 = np.array([kp1[m.queryIdx].pt for m in good_matches]).reshape(-1,1,2).astype(np.float32)
 pts2 = np.array([kp2[m.trainIdx].pt for m in good_matches]).reshape(-1,1,2).astype(np.float32)
 
