@@ -1,7 +1,6 @@
 import tensorflow as tf
 print("Tensorflow version is ", tf.__version__)
 from tensorflow import keras
-import kerasgpu 
 
 import numpy as np 
 import matplotlib.pyplot as plt
