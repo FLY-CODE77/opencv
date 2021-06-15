@@ -19,6 +19,16 @@ def on_mouse(event, x, y, flags, _):
             oldx, oldy = x, y 
             cv2.imshow('img', img)
 
+
+def norm_digit(img):
+    m = cv2.moments(img)
+    cx = m['m10'] / m['m00']
+    cy = m['m01'] / m['m00']
+    h, w = img.shape[:2]
+    aff = np.array([[1, 0, w/2 - cx], [0, 1, h/2 - cy]], dtype=np.float32)
+    dst = cv2.warpAffine(img, aff, (0, 0))
+    return dst
+
 net = cv2.dnn.readNet('mnist_cnn.pb')
 
 if net.empty():
@@ -36,7 +46,7 @@ while True:
     if c == 27:
         break
     elif c == ord(' '):
-        blob = cv2.dnn.blobFromImage(img, 1/255., (28, 28))
+        blob = cv2.dnn.blobFromImage(norm_digit(img), 1/255., (28, 28))
         net.setInput(blob)
         prob = net.forward()
 
